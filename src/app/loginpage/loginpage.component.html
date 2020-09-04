@@ -1,0 +1,71 @@
+<div class="container-fluid">
+    <div class="row" style="height: 100vh">
+        <!-- Left Block -->
+        <div class="col d-flex flex-column justify-content-center align-items-center" id="col">
+
+            <div>
+                <fa-icon [icon]="faSchool" style="font-size: 54px"></fa-icon>
+            </div>
+            <div class="h3">Welcome To International School</div>
+            <div class="h6">
+                Login to go ahead...!
+            </div>
+            <div>
+                <img src="assets/log.svg" alt="" height="400px" width="500px" />
+
+            </div>
+        </div>
+
+        <!-- Right Block-->
+        <div class="col bg-light d-flex flex-column justify-content-center align-items-center"
+            [formGroup]="fbFormGroup">
+            <div class="alert alert-danger" role="alert" *ngIf="uiInvalidCredential">
+                A simple danger alert—check it out!
+            </div>
+
+            <div class="h2"><b>Application Login</b></div>
+
+            <div class="input-field">
+                <fa-icon [icon]="faAddressCard"></fa-icon>
+                <input type="text" style="border-radius: 20px;" placeholder="Enter Username" class="form-control"
+                    formControlName="username" required title="Please match Username" />
+            </div>
+
+            <div class="mt-2" class="input-field">
+                <fa-icon [icon]="faLock"></fa-icon>
+
+                <input type="password" style="border-radius: 20px;" placeholder="Enter Password" class="form-control"
+                    formControlName="password" required />
+            </div>
+
+            <button class="btn btn-sm btn-info mt-2 mb-2" style="border-radius: 20px; width: 100px; height: 40px;"
+                [disabled]="!fbFormGroup.valid" (click)="loginProcessHere()">
+                Login Here
+            </button>
+            <a routerLink="/forgetpass">Forget Password?</a>
+
+            <div>
+                <p class="social-text">Or Login in with social platforms</p>
+                <div class="social-media">
+                    <a href="#" class="social-icon">
+                        <fa-icon [icon]="faFacebook"></fa-icon>
+
+                    </a>
+                    <a href="#" class="social-icon">
+                        <fa-icon [icon]="faTwitter"></fa-icon>
+
+                    </a>
+                    <a href="#" class="social-icon">
+                        <fa-icon [icon]="faGoogle"></fa-icon>
+
+                    </a>
+                    <a href="#" class="social-icon">
+                        <fa-icon [icon]="faLinkedinIn"></fa-icon>
+
+                    </a>
+                </div>
+            </div>
+            <a routerLink="/register">Register Here</a>
+        </div>
+    </div>
+</div>

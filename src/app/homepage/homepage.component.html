@@ -1,0 +1,27 @@
+<div class="container-fluid">
+
+    <div class="row  sticky-top" style="height: 65px" id="nav">
+        <div class="col d-flex align-items-center">
+            <fa-icon [icon]="faSchool" style="font-size: 28px; margin-right: 8px"></fa-icon>
+            <b style="font-size: 25px;"> International-School</b>
+        </div>
+        <div class="col d-flex justify-content-end align-items-center">
+            <a class="btn btn-outline-light mr-1" routerLink="/home/index">Home</a>
+            <a class="btn btn-outline-light mr-1" routerLink="/home/admission">
+                Admission
+            </a>
+            <a class="btn btn-outline-light mr-1" routerLink="/home/Gallery">
+                Gallery
+            </a>
+
+            <a class="btn btn-outline-light mr-1" routerLink="/home/contact-us">
+                Contact Us
+            </a>
+
+            <button class="btn btn-outline-light mr-1" (click)="processLogout()">
+                Log Out
+            </button>
+        </div>
+    </div>
+    <router-outlet></router-outlet>
+</div>

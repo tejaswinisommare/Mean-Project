@@ -1,0 +1,86 @@
+<div class="container-fluid">
+    <div class="row" style="height: 100vh">
+
+
+        <!-- Right Block-->
+        <div class="col bg-light d-flex flex-column justify-content-center align-items-center"
+            [formGroup]="fbFormGroup">
+            <div class="alert alert-danger" role="alert" *ngIf="uiInvalidCredential">
+                A simple danger alert—check it out!
+            </div>
+
+            <div class="h2"><b>Application Register</b></div>
+
+            <div class="input-field">
+
+                <fa-icon [icon]="faAddressCard"></fa-icon>
+                <input type="text" style="border-radius: 20px;" placeholder="Enter Username" class="form-control"
+                    formControlName="username" required pattern="[A-Za-Z]" />
+            </div>
+            <div class="mt-2" class="input-field">
+                <fa-icon [icon]="faEnvelope"></fa-icon>
+
+                <input type="text" style="border-radius: 20px;" placeholder="Enter Email" class="form-control"
+                    formControlName="email" required title="Email @ is required" />
+            </div>
+            <div class="mt-2" class="input-field">
+                <fa-icon [icon]="faLock"></fa-icon>
+
+                <input type="password" style="border-radius: 20px;" placeholder="Enter Password" class="form-control"
+                    formControlName="password" required id="pwd" name="pwd"
+                    title="Must contain at least 4 or more characters" />
+            </div>
+            <div class="mt-1" class="input-field">
+                <fa-icon [icon]="faMobileAlt"></fa-icon>
+
+                <input type="text" style="border-radius: 20px;" placeholder="Enter Mobile" class="form-control"
+                    formControlName="mobile" required />
+            </div>
+
+            <button class="btn btn-sm btn-info mt-2 mb-2" style="border-radius: 20px; width: 120px; height: 40px;"
+                [disabled]="!fbFormGroup.valid" (click)="registerHere()">
+                Register Here
+            </button>
+            <div>
+                <p class="social-text">Or Login in with social platforms</p>
+                <div class="social-media">
+                    <a href="#" class="social-icon">
+                        <fa-icon [icon]="faFacebook"></fa-icon>
+
+                    </a>
+                    <a href="#" class="social-icon">
+                        <fa-icon [icon]="faTwitter"></fa-icon>
+
+                    </a>
+                    <a href="#" class="social-icon">
+                        <fa-icon [icon]="faGoogle"></fa-icon>
+
+                    </a>
+                    <a href="#" class="social-icon">
+                        <fa-icon [icon]="faLinkedinIn"></fa-icon>
+
+                    </a>
+                </div>
+            </div>
+
+            <a routerLink="/login">Login Here</a>
+        </div>
+
+        <!-- Left Block -->
+        <div class="col d-flex flex-column justify-content-center align-items-center" id="col">
+            <div>
+                <fa-icon [icon]="faSchool" style="font-size: 54px"></fa-icon>
+            </div>
+            <div class="h3">Welcome To International School</div>
+            <div class="h6">
+                <p style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">Welcome to our school
+                    you can visit an take admission...!</p>
+            </div>
+
+            <div>
+                <img src="assets/register.svg" alt="" height="400px" width="500px" />
+
+            </div>
+        </div>
+    </div>
+</div>
